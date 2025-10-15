@@ -1,133 +1,1035 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{{--<!DOCTYPE html>--}}
+{{--<html lang="ur" dir="rtl">--}}
+{{--<head>--}}
+{{--    <meta charset="UTF-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
+{{--    <title>ایمرجنسی سروسز اکیڈمی - ریسکیو 1122</title>--}}
+{{--    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">--}}
+{{--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">--}}
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">--}}
+{{--    <style>--}}
+{{--        * {--}}
+{{--            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', sans-serif;--}}
+{{--        }--}}
 
-        <title>Laravel</title>
+{{--        :root {--}}
+{{--            --primary: #c0392b;--}}
+{{--            --secondary: #e74c3c;--}}
+{{--            --accent: #3498db;--}}
+{{--            --success: #2ecc71;--}}
+{{--            --warning: #f39c12;--}}
+{{--            --dark: #2c3e50;--}}
+{{--            --light: #ecf0f1;--}}
+{{--        }--}}
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+{{--        body {--}}
+{{--            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);--}}
+{{--            min-height: 100vh;--}}
+{{--            color: #333;--}}
+{{--        }--}}
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+{{--        .hero-section {--}}
+{{--            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),--}}
+{{--            url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600"><rect width="1200" height="600" fill="%231a2a6c"/><circle cx="200" cy="150" r="80" fill="%23b21f1f" opacity="0.3"/><circle cx="1000" cy="400" r="120" fill="%23fdbb2d" opacity="0.2"/><polygon points="600,100 800,200 700,400 500,300" fill="%23c0392b" opacity="0.4"/></svg>');--}}
+{{--            background-size: cover;--}}
+{{--            background-position: center;--}}
+{{--            color: white;--}}
+{{--            padding: 100px 0;--}}
+{{--            text-align: center;--}}
+{{--        }--}}
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
+{{--        .hero-section h1 {--}}
+{{--            font-size: 3.5rem;--}}
+{{--            font-weight: bold;--}}
+{{--            margin-bottom: 20px;--}}
+{{--            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);--}}
+{{--        }--}}
+
+{{--        .hero-section p {--}}
+{{--            font-size: 1.3rem;--}}
+{{--            margin-bottom: 30px;--}}
+{{--            opacity: 0.9;--}}
+{{--        }--}}
+
+{{--        .feature-card {--}}
+{{--            background: white;--}}
+{{--            border-radius: 15px;--}}
+{{--            padding: 30px;--}}
+{{--            text-align: center;--}}
+{{--            box-shadow: 0 10px 30px rgba(0,0,0,0.1);--}}
+{{--            transition: all 0.3s ease;--}}
+{{--            border-bottom: 5px solid var(--accent);--}}
+{{--            height: 100%;--}}
+{{--        }--}}
+
+{{--        .feature-card:hover {--}}
+{{--            transform: translateY(-10px);--}}
+{{--            box-shadow: 0 20px 40px rgba(0,0,0,0.2);--}}
+{{--        }--}}
+
+{{--        .feature-icon {--}}
+{{--            width: 80px;--}}
+{{--            height: 80px;--}}
+{{--            background: linear-gradient(135deg, var(--primary), var(--secondary));--}}
+{{--            border-radius: 50%;--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: center;--}}
+{{--            margin: 0 auto 20px;--}}
+{{--            color: white;--}}
+{{--            font-size: 2rem;--}}
+{{--        }--}}
+
+{{--        .stats-section {--}}
+{{--            background: linear-gradient(135deg, var(--dark), #34495e);--}}
+{{--            color: white;--}}
+{{--            padding: 80px 0;--}}
+{{--        }--}}
+
+{{--        .stat-number {--}}
+{{--            font-size: 3rem;--}}
+{{--            font-weight: bold;--}}
+{{--            color: var(--success);--}}
+{{--        }--}}
+
+{{--        .cta-section {--}}
+{{--            background: linear-gradient(135deg, var(--success), #27ae60);--}}
+{{--            color: white;--}}
+{{--            padding: 80px 0;--}}
+{{--            text-align: center;--}}
+{{--        }--}}
+
+{{--        .btn-hero {--}}
+{{--            background: linear-gradient(135deg, var(--primary), var(--secondary));--}}
+{{--            color: white;--}}
+{{--            padding: 15px 40px;--}}
+{{--            border: none;--}}
+{{--            border-radius: 50px;--}}
+{{--            font-size: 1.2rem;--}}
+{{--            font-weight: bold;--}}
+{{--            text-decoration: none;--}}
+{{--            display: inline-block;--}}
+{{--            transition: all 0.3s ease;--}}
+{{--            box-shadow: 0 5px 15px rgba(0,0,0,0.2);--}}
+{{--        }--}}
+
+{{--        .btn-hero:hover {--}}
+{{--            transform: translateY(-3px);--}}
+{{--            box-shadow: 0 10px 25px rgba(0,0,0,0.3);--}}
+{{--            color: white;--}}
+{{--        }--}}
+
+{{--        .nav-custom {--}}
+{{--            background: rgba(44, 62, 80, 0.95) !important;--}}
+{{--            backdrop-filter: blur(10px);--}}
+{{--        }--}}
+
+{{--        .section-title {--}}
+{{--            font-size: 2.5rem;--}}
+{{--            color: var(--dark);--}}
+{{--            text-align: center;--}}
+{{--            margin-bottom: 50px;--}}
+{{--            position: relative;--}}
+{{--        }--}}
+
+{{--        .section-title::after {--}}
+{{--            content: '';--}}
+{{--            position: absolute;--}}
+{{--            bottom: -10px;--}}
+{{--            left: 50%;--}}
+{{--            transform: translateX(-50%);--}}
+{{--            width: 100px;--}}
+{{--            height: 4px;--}}
+{{--            background: linear-gradient(to right, var(--primary), var(--secondary));--}}
+{{--            border-radius: 2px;--}}
+{{--        }--}}
+
+{{--        .testimonial-card {--}}
+{{--            background: white;--}}
+{{--            border-radius: 15px;--}}
+{{--            padding: 30px;--}}
+{{--            box-shadow: 0 10px 30px rgba(0,0,0,0.1);--}}
+{{--            border-left: 5px solid var(--accent);--}}
+{{--            margin: 20px 0;--}}
+{{--        }--}}
+
+{{--        .testimonial-text {--}}
+{{--            font-style: italic;--}}
+{{--            color: #666;--}}
+{{--            margin-bottom: 20px;--}}
+{{--        }--}}
+
+{{--        .testimonial-author {--}}
+{{--            font-weight: bold;--}}
+{{--            color: var(--dark);--}}
+{{--        }--}}
+
+{{--        .footer {--}}
+{{--            background: var(--dark);--}}
+{{--            color: white;--}}
+{{--            padding: 50px 0 20px;--}}
+{{--        }--}}
+
+{{--        .social-links a {--}}
+{{--            color: white;--}}
+{{--            font-size: 1.5rem;--}}
+{{--            margin: 0 10px;--}}
+{{--            transition: color 0.3s ease;--}}
+{{--        }--}}
+
+{{--        .social-links a:hover {--}}
+{{--            color: var(--accent);--}}
+{{--        }--}}
+
+{{--        /* Animations */--}}
+{{--        @keyframes fadeInUp {--}}
+{{--            from {--}}
+{{--                opacity: 0;--}}
+{{--                transform: translateY(30px);--}}
+{{--            }--}}
+{{--            to {--}}
+{{--                opacity: 1;--}}
+{{--                transform: translateY(0);--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        .fade-in-up {--}}
+{{--            animation: fadeInUp 0.8s ease-out;--}}
+{{--        }--}}
+
+{{--        /* Mobile Responsive */--}}
+{{--        @media (max-width: 768px) {--}}
+{{--            .hero-section h1 {--}}
+{{--                font-size: 2.5rem;--}}
+{{--            }--}}
+
+{{--            .hero-section p {--}}
+{{--                font-size: 1.1rem;--}}
+{{--            }--}}
+
+{{--            .section-title {--}}
+{{--                font-size: 2rem;--}}
+{{--            }--}}
+
+{{--            .stat-number {--}}
+{{--                font-size: 2rem;--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        @media (max-width: 576px) {--}}
+{{--            .hero-section {--}}
+{{--                padding: 60px 0;--}}
+{{--            }--}}
+
+{{--            .hero-section h1 {--}}
+{{--                font-size: 2rem;--}}
+{{--            }--}}
+
+{{--            .feature-card {--}}
+{{--                padding: 20px;--}}
+{{--            }--}}
+{{--        }--}}
+{{--    </style>--}}
+{{--</head>--}}
+{{--<body>--}}
+{{--<!-- Navigation -->--}}
+{{--<nav class="navbar navbar-expand-lg navbar-dark nav-custom fixed-top">--}}
+{{--    <div class="container">--}}
+{{--        <a class="navbar-brand" href="#">--}}
+{{--            <i class="fas fa-first-aid me-2"></i>--}}
+{{--            ایمرجنسی سروسز اکیڈمی--}}
+{{--        </a>--}}
+{{--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">--}}
+{{--            <span class="navbar-toggler-icon"></span>--}}
+{{--        </button>--}}
+{{--        <div class="collapse navbar-collapse" id="navbarNav">--}}
+{{--            <ul class="navbar-nav ms-auto">--}}
+{{--                <li class="nav-item"><a class="nav-link" href="#home">ہوم</a></li>--}}
+{{--                <li class="nav-item"><a class="nav-link" href="#features">خصوصیات</a></li>--}}
+{{--                <li class="nav-item"><a class="nav-link" href="#about">ہمارے بارے میں</a></li>--}}
+{{--                <li class="nav-item"><a class="nav-link" href="#contact">رابطہ</a></li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link btn btn-outline-light btn-sm ms-2" href="{{ route('evaluation.form') }}">--}}
+{{--                        <i class="fas fa-clipboard-list me-1"></i>--}}
+{{--                        تشخیص فارم--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link btn btn-light btn-sm ms-2" href="{{ route('login') }}">--}}
+{{--                        <i class="fas fa-sign-in-alt me-1"></i>--}}
+{{--                        لاگ ان--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</nav>--}}
+
+{{--<!-- Hero Section -->--}}
+{{--<section id="home" class="hero-section">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row justify-content-center">--}}
+{{--            <div class="col-lg-8 fade-in-up">--}}
+{{--                <h1>--}}
+{{--                    <i class="fas fa-first-aid me-3"></i>--}}
+{{--                    ایمرجنسی سروسز اکیڈمی--}}
+{{--                </h1>--}}
+{{--                <p class="lead">ریسکیو 1122 - خدمت اور بچاؤ کی تربیت</p>--}}
+{{--                <p>ہماری مشن ہے کہ ہر ایمرجنسی صورت حال میں پیشہ ورانہ اور موثر خدمات فراہم کی جائیں</p>--}}
+{{--                <div class="mt-4">--}}
+{{--                    <a href="{{ route('evaluation.form') }}" class="btn-hero me-3">--}}
+{{--                        <i class="fas fa-play-circle me-2"></i>--}}
+{{--                        تشخیص شروع کریں--}}
+{{--                    </a>--}}
+{{--                    <a href="#features" class="btn-hero" style="background: linear-gradient(135deg, var(--accent), #2980b9);">--}}
+{{--                        <i class="fas fa-info-circle me-2"></i>--}}
+{{--                        مزید جانیں--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
+
+{{--<!-- Features Section -->--}}
+{{--<section id="features" class="py-5" style="background: var(--light);">--}}
+{{--    <div class="container">--}}
+{{--        <h2 class="section-title">ہماری خصوصیات</h2>--}}
+{{--        <div class="row g-4">--}}
+{{--            <div class="col-md-4 fade-in-up" style="animation-delay: 0.1s;">--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">--}}
+{{--                        <i class="fas fa-clipboard-check"></i>--}}
+{{--                    </div>--}}
+{{--                    <h4>مہارت کی تشخیص</h4>--}}
+{{--                    <p>پیشہ ورانہ مہارتوں کی جامع تشخیص اور تجزیہ کا جدید نظام</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-4 fade-in-up" style="animation-delay: 0.2s;">--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">--}}
+{{--                        <i class="fas fa-chart-line"></i>--}}
+{{--                    </div>--}}
+{{--                    <h4>کارکردگی کا تجزیہ</h4>--}}
+{{--                    <p>تفصیلی رپورٹس اور کارکردگی کے گراف کے ذریعے بہتری کے مواقع</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-4 fade-in-up" style="animation-delay: 0.3s;">--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">--}}
+{{--                        <i class="fas fa-file-excel"></i>--}}
+{{--                    </div>--}}
+{{--                    <h4>ایکسل رپورٹس</h4>--}}
+{{--                    <p>مکمل ڈیٹا کی برآمدگی اور پیشہ ورانہ رپورٹس کی تیاری</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-4 fade-in-up" style="animation-delay: 0.4s;">--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">--}}
+{{--                        <i class="fas fa-mobile-alt"></i>--}}
+{{--                    </div>--}}
+{{--                    <h4>موبائل دوستانہ</h4>--}}
+{{--                    <p>ہر ڈیوائس پر بہترین کام کرنے والا رسپانسو ڈیزائن</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-4 fade-in-up" style="animation-delay: 0.5s;">--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">--}}
+{{--                        <i class="fas fa-bolt"></i>--}}
+{{--                    </div>--}}
+{{--                    <h4>فوری عمل</h4>--}}
+{{--                    <p>تیز رفتار اور آسان تشخیص کا عمل بغیر کسی تاخیر کے</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-4 fade-in-up" style="animation-delay: 0.6s;">--}}
+{{--                <div class="feature-card">--}}
+{{--                    <div class="feature-icon">--}}
+{{--                        <i class="fas fa-shield-alt"></i>--}}
+{{--                    </div>--}}
+{{--                    <h4>محفوظ نظام</h4>--}}
+{{--                    <p>ڈیٹا کی مکمل حفاظت اور پرائیویسی کا خیال</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
+
+{{--<!-- Stats Section -->--}}
+{{--<section class="stats-section">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row text-center">--}}
+{{--            <div class="col-md-3 col-6 mb-4 fade-in-up">--}}
+{{--                <div class="stat-number">۵۰۰+</div>--}}
+{{--                <p>کل تشخیصات</p>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-6 mb-4 fade-in-up" style="animation-delay: 0.1s;">--}}
+{{--                <div class="stat-number">۹۵٪</div>--}}
+{{--                <p>مستفید ہونے والے</p>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-6 mb-4 fade-in-up" style="animation-delay: 0.2s;">--}}
+{{--                <div class="stat-number">۴.۸</div>--}}
+{{--                <p>اوسط درجہ بندی</p>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-3 col-6 mb-4 fade-in-up" style="animation-delay: 0.3s;">--}}
+{{--                <div class="stat-number">۲۴/۷</div>--}}
+{{--                <p>دستیابی</p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
+
+{{--<!-- Testimonials Section -->--}}
+{{--<section id="about" class="py-5">--}}
+{{--    <div class="container">--}}
+{{--        <h2 class="section-title">شرکاء کے تاثرات</h2>--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-6 fade-in-up">--}}
+{{--                <div class="testimonial-card">--}}
+{{--                    <div class="testimonial-text">--}}
+{{--                        "یہ تشخیصی نظام ہماری پیشہ ورانہ مہارتوں کو بہتر بنانے میں انتہائی معاون ثابت ہوا۔ تفصیلی فیڈ بیک نے ہمیں اپنی کمزوریوں کو سمجھنے اور ان پر کام کرنے کا موقع دیا۔"--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-author">--}}
+{{--                        — محمد عمر، سینئر ریسکیو آپریٹر--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-6 fade-in-up" style="animation-delay: 0.2s;">--}}
+{{--                <div class="testimonial-card">--}}
+{{--                    <div class="testimonial-text">--}}
+{{--                        "موبائل پر اس نظام کا استعمال انتہائی آسان ہے۔ بغیر کسی تکلیف کے اپنی کارکردگی کا جائزہ لے سکتے ہیں۔ ایکسل رپورٹس کی سہولت بہت کارآمد ہے۔"--}}
+{{--                    </div>--}}
+{{--                    <div class="testimonial-author">--}}
+{{--                        — عائشہ رحمان، ٹریننگ انچارج--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
+
+{{--<!-- CTA Section -->--}}
+{{--<section class="cta-section">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row justify-content-center">--}}
+{{--            <div class="col-lg-8 text-center fade-in-up">--}}
+{{--                <h2 class="mb-4">اپنی پیشہ ورانہ مہارتوں کا جائزہ لیں</h2>--}}
+{{--                <p class="mb-4 lead">بغیر لاگ ان کے فوری تشخیص شروع کریں اور اپنی کارکردگی کو بہتر بنائیں</p>--}}
+{{--                <a href="{{ route('evaluation.form') }}" class="btn-hero" style="background: linear-gradient(135deg, var(--dark), #34495e);">--}}
+{{--                    <i class="fas fa-rocket me-2"></i>--}}
+{{--                    مفت تشخیص شروع کریں--}}
+{{--                </a>--}}
+{{--                <p class="mt-3">--}}
+{{--                    <small>کوئی لاگ ان درکار نہیں - صرف ۵ منٹ میں مکمل</small>--}}
+{{--                </p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
+
+{{--<!-- Footer -->--}}
+{{--<footer class="footer">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-4 mb-4">--}}
+{{--                <h5>--}}
+{{--                    <i class="fas fa-first-aid me-2"></i>--}}
+{{--                    ایمرجنسی سروسز اکیڈمی--}}
+{{--                </h5>--}}
+{{--                <p>ریسکیو 1122 - خدمت، بچاؤ، اور تربیت</p>--}}
+{{--                <div class="social-links">--}}
+{{--                    <a href="#"><i class="fab fa-facebook"></i></a>--}}
+{{--                    <a href="#"><i class="fab fa-twitter"></i></a>--}}
+{{--                    <a href="#"><i class="fab fa-linkedin"></i></a>--}}
+{{--                    <a href="#"><i class="fab fa-youtube"></i></a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-4 mb-4">--}}
+{{--                <h5>فوری لنکس</h5>--}}
+{{--                <ul class="list-unstyled">--}}
+{{--                    <li><a href="{{ route('evaluation.form') }}" class="text-light">تشخیص فارم</a></li>--}}
+{{--                    <li><a href="{{ route('login') }}" class="text-light">لاگ ان</a></li>--}}
+{{--                    <li><a href="{{ route('register') }}" class="text-light">رجسٹر</a></li>--}}
+{{--                    <li><a href="#features" class="text-light">خصوصیات</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-4 mb-4">--}}
+{{--                <h5>رابطہ کریں</h5>--}}
+{{--                <p>--}}
+{{--                    <i class="fas fa-map-marker-alt me-2"></i>--}}
+{{--                    ایمرجنسی سروسز اکیڈمی، اسلام آباد--}}
+{{--                </p>--}}
+{{--                <p>--}}
+{{--                    <i class="fas fa-phone me-2"></i>--}}
+{{--                    1122--}}
+{{--                </p>--}}
+{{--                <p>--}}
+{{--                    <i class="fas fa-envelope me-2"></i>--}}
+{{--                    info@rescue1122.gov.pk--}}
+{{--                </p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">--}}
+{{--        <div class="text-center">--}}
+{{--            <p>&copy; 2024 ایمرجنسی سروسز اکیڈمی. تمام حقوق محفوظ ہیں.</p>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</footer>--}}
+
+{{--<!-- Bootstrap JS -->--}}
+{{--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>--}}
+
+{{--<script>--}}
+{{--    // Smooth scrolling--}}
+{{--    document.querySelectorAll('a[href^="#"]').forEach(anchor => {--}}
+{{--        anchor.addEventListener('click', function (e) {--}}
+{{--            e.preventDefault();--}}
+{{--            document.querySelector(this.getAttribute('href')).scrollIntoView({--}}
+{{--                behavior: 'smooth'--}}
+{{--            });--}}
+{{--        });--}}
+{{--    });--}}
+
+{{--    // Animation on scroll--}}
+{{--    const observerOptions = {--}}
+{{--        threshold: 0.1,--}}
+{{--        rootMargin: '0px 0px -50px 0px'--}}
+{{--    };--}}
+
+{{--    const observer = new IntersectionObserver((entries) => {--}}
+{{--        entries.forEach(entry => {--}}
+{{--            if (entry.isIntersecting) {--}}
+{{--                entry.target.style.opacity = '1';--}}
+{{--                entry.target.style.transform = 'translateY(0)';--}}
+{{--            }--}}
+{{--        });--}}
+{{--    }, observerOptions);--}}
+
+{{--    // Observe all fade-in-up elements--}}
+{{--    document.querySelectorAll('.fade-in-up').forEach(el => {--}}
+{{--        el.style.opacity = '0';--}}
+{{--        el.style.transform = 'translateY(30px)';--}}
+{{--        el.style.transition = 'all 0.8s ease-out';--}}
+{{--        observer.observe(el);--}}
+{{--    });--}}
+{{--</script>--}}
+{{--</body>--}}
+{{--</html>--}}
+
+{{--========================--}}
+
+
+
+
+
+    <!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایمرجنسی سروسز اکیڈمی - ریسکیو 1122</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(179, 33, 31, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(253, 187, 45, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(26, 42, 108, 0.4) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .purpose-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .purpose-title {
+            font-size: 2.5rem;
+            color: #c0392b;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .purpose-text {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 5px solid #e74c3c;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .feature-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        .btn-secondary-custom {
+            background: transparent;
+            color: white;
+            padding: 15px 40px;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+        }
+
+        .btn-secondary-custom:hover {
+            background: white;
+            color: #2c3e50;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                font-size: 3rem;
+            }
+
+            .purpose-title {
+                font-size: 2rem;
+            }
+
+            .purpose-text {
+                font-size: 1.1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            .btn-primary-custom, .btn-secondary-custom {
+                display: block;
+                margin: 10px auto;
+                width: 90%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .purpose-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Simple Navigation */
+        .simple-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 62, 80, 0.95);
+            padding: 15px 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+<!-- Simple Navigation -->
+<nav class="simple-nav">
+    <div class="nav-content">
+        <a href="#" class="nav-logo">
+            <i class="fas fa-first-aid me-2"></i>
+            ایمرجنسی سروسز اکیڈمی
+        </a>
+        <div class="nav-links">
+            <a href="{{ route('evaluation.form') }}">تشخیص فارم</a>
+            <a href="{{ route('login') }}">لاگ ان</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="logo">
+            <i class="fas fa-first-aid"></i>
+        </div>
+        <h1 class="hero-title fade-in">
+            ایمرجنسی سروسز اکیڈمی
+        </h1>
+        <p class="hero-subtitle fade-in">
+            ریسکیو 1122 - خدمت، بچاؤ، اور تحفظ
+        </p>
+        <div class="mt-4 fade-in">
+            <a href="{{ route('evaluation.form') }}" class="btn-primary-custom">
+                <i class="fas fa-play-circle me-2"></i>
+                تشخیص شروع کریں
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Purpose Section -->
+<section class="purpose-section">
+    <div class="container">
+        <h2 class="purpose-title fade-in">ہماری خدمات کو بہتر بنانے میں مدد کریں</h2>
+        <p class="purpose-text fade-in">
+            ایمرجنسی سروسز اکیڈمی کا مقصد عوام کو بہترین ایمرجنسی خدمات فراہم کرنا ہے۔
+            آپ کی قیمتی رائے ہمیں اپنی خدمات کو مزید بہتر بنانے اور تربیتی معیارات کو بلند کرنے میں مدد دے گی۔
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-bullseye"></i>
                 </div>
-            @endif
+                <h3 class="feature-title">ہمارا مشن</h3>
+                <p class="feature-desc">
+                    ہر ایمرجنسی صورت حال میں فوری، پیشہ ورانہ اور موثر خدمات فراہم کرنا
+                </p>
+            </div>
 
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-heartbeat"></i>
                 </div>
+                <h3 class="feature-title">خدمات</h3>
+                <p class="feature-desc">
+                    ایمرجنسی ریسکیو، طبی امداد، اور عوامی تحفظ کی جامع خدمات
+                </p>
+            </div>
 
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm sm:text-left">
-                        &nbsp;
-                    </div>
-
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
+                <h3 class="feature-title">تربیت</h3>
+                <p class="feature-desc">
+                    پیشہ ورانہ تربیت اور جدید ترین ٹیکنالوجی کے ساتھ عملے کی تیاری
+                </p>
             </div>
         </div>
-    </body>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2 class="cta-title fade-in">اپنی رائے دیں، فرق پیدا کریں</h2>
+        <p class="cta-subtitle fade-in">
+            صرف ۵ منٹ میں اپنی قیمتی رائے دیں اور ہماری خدمات کو بہتر بنانے میں حصہ لیں
+        </p>
+        <div class="fade-in">
+            <a href="{{ route('evaluation.form') }}" class="btn-primary-custom">
+                <i class="fas fa-clipboard-list me-2"></i>
+                تشخیص فارم شروع کریں
+            </a>
+            <a href="#about" class="btn-secondary-custom">
+                <i class="fas fa-info-circle me-2"></i>
+                مزید جانیں
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="purpose-section" style="background: #f8f9fa;">
+    <div class="container">
+        <h2 class="purpose-title fade-in">ہمارے بارے میں</h2>
+        <p class="purpose-text fade-in">
+            ایمرجنسی سروسز اکیڈمی ملک کی سب سے بڑی ایمرجنسی خدمات فراہم کرنے والی ادارہ ہے۔
+            ہم 24/7 عوام کی خدمت کے لیے وقف ہیں اور مسلسل بہتری کے عمل میں مصروف ہیں۔
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in" style="border-top-color: #3498db;">
+                <div class="feature-icon" style="color: #3498db;">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">عوامی تحفظ</h3>
+                <p class="feature-desc">
+                    ہر شہری کی حفاظت اور بہبود ہمارا اولین مقصد ہے
+                </p>
+            </div>
+
+            <div class="feature-card fade-in" style="border-top-color: #2ecc71;">
+                <div class="feature-icon" style="color: #2ecc71;">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="feature-title">عوامی خدمت</h3>
+                <p class="feature-desc">
+                    ہر ایمرجنسی میں فوری اور پیشہ ورانہ خدمات
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-logo">
+            <i class="fas fa-first-aid"></i>
+        </div>
+        <p class="footer-text">ایمرجنسی سروسز اکیڈمی - ریسکیو 1122</p>
+        <p class="footer-text">خدمت، بچاؤ، تحفظ</p>
+        <p class="footer-text" style="margin-top: 20px;">
+            <small>ہنگامی صورت حال میں فون کریں: <strong>1122</strong></small>
+        </p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Simple fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(el => {
+        fadeObserver.observe(el);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Add loading animation to buttons
+    document.querySelectorAll('.btn-primary-custom, .btn-secondary-custom').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> لوڈ ہو رہا ہے...';
+        });
+    });
+</script>
+</body>
 </html>

@@ -13,10 +13,12 @@ return new class extends Migration
     {
 
         Schema::create('evaluations', function (Blueprint $table) {
+
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
 
             $table->string('designation');
+            $table->string('district');
             $table->string('experience');
             $table->date('evaluation_date');
 

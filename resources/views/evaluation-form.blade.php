@@ -408,6 +408,77 @@
             @keyframes spin {
                 to { transform: rotate(360deg); }
             }
+
+
+            /* Universal form styling */
+            .form-group {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1rem;
+            }
+
+            .form-group label {
+                font-weight: 600;
+                margin-bottom: 6px;
+                color: #222;
+                text-align: right; /* Urdu alignment */
+                font-size: 16px;
+            }
+
+            .form-group select {
+                width: 100%;
+                min-width: 0;
+                padding: 14px 16px;
+                font-size: 17px;           /* Larger, clearer text */
+                line-height: 1.6;          /* Improves Urdu readability */
+                font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Arial', sans-serif;
+                border: 2px solid #ccc;
+                border-radius: 8px;
+                background-color: #fff;
+                color: #222;
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+                background-repeat: no-repeat;
+                background-position: right 1rem center;
+                background-size: 1rem;
+                transition: all 0.3s ease;
+                box-sizing: border-box;
+            }
+
+            .form-group select option {
+                font-size: 16px;
+                line-height: 1.8;
+                color: #333;
+                background-color: #fff;
+            }
+
+            .form-group select:focus {
+                border-color: #e74c3c;
+                box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+                outline: none;
+            }
+
+            /* ✅ Mobile optimization */
+            @media (max-width: 600px) {
+                .form-group label {
+                    font-size: 15px;
+                }
+                .form-group select {
+                    font-size: 16px;
+                    padding: 12px 14px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                /* For parallel layout */
+                .form-group > div[style*="grid-template-columns"] {
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                }
+            }
         </style>
     @endpush
 
@@ -422,12 +493,12 @@
                 <!-- User Status Info -->
                 @auth
                     <div class="user-status">
-                        <i class="fas fa-user-check me-2"></i>
+                        <i class="m-2  fas fa-user-check me-2"></i>
                         آپ لاگ ان ہیں: <strong>{{ Auth::user()->name }}</strong> ({{ Auth::user()->email }})
                     </div>
                 @else
                     <div class="user-info">
-                        <i class="fas fa-info-circle me-2"></i>
+                        <i class="m-2  fas fa-info-circle me-2"></i>
                         <strong>نوٹ:</strong> براہ کرم اپنا نام اور ای میل درج کریں۔ اگر آپ کا اکاؤنٹ موجود نہیں ہے تو خود بخود بن جائے گا۔
                     </div>
                 @endauth
@@ -437,42 +508,104 @@
                         <!-- User Information for Guests -->
                         @guest
                             <div class="form-group">
-                                <label for="user_name"><i class="fas fa-user me-2"></i>مکمل نام:</label>
+                                <label for="user_name"><i class="m-2  fas fa-user me-2"></i>مکمل نام:</label>
                                 <input type="text" id="user_name" name="user_name" required placeholder="اپنا مکمل نام درج کریں">
                             </div>
 
                             <div class="form-group">
-                                <label for="user_email"><i class="fas fa-envelope me-2"></i>ای میل ایڈریس:</label>
+                                <label for="user_email"><i class="m-2  fas fa-envelope me-2"></i>ای میل ایڈریس:</label>
                                 <input type="email" id="user_email" name="user_email" required placeholder="example@domain.com">
                             </div>
                         @endguest
 
+
+
                         <!-- Professional Information -->
+
                         <div class="form-group">
-                            <label for="designation"><i class="fas fa-briefcase me-2"></i>عہدہ:</label>
-                            <input type="text" id="designation" name="designation" required placeholder="اپنا عہدہ درج کریں">
+                            <label for="designation">
+                                <i class="m-2 fas fa-briefcase me-2"></i>عہدہ:
+                            </label>
+
+                            <select id="designation" name="designation" required>
+                                <option value="">اپنا عہدہ منتخب کریں</option>
+                                @foreach($designations as $designation)
+                                    <option value="{{$designation->code}}"> ({{$designation->urdu_name}}) &nbsp;   {{$designation->code}}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+
+
+
+                        <!-- District Information -->
+
+                        <div class="form-group">
+                            <label for="district">
+                                <i class="m-2 fas fa-city me-2"></i> ڈسٹرکٹ:
+                            </label>
+
+
+                            <select id="district" name="district" required>
+                                <option value="">اپنا ڈسٹرکٹ منتخب کریں</option>
+
+                                @foreach($districts as $district)
+                                    <option value="{{$district->code}}"> ({{$district->urdu_name}}) &nbsp;   {{$district->code}}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+
+                        <!-- experience Information -->
+
+
+                        <!-- Experience Information - Parallel Layout -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div class="form-group">
+                                <label for="date_of_joining"><i class="m-2 fas fa-calendar-plus me-2"></i>تاریخ تقرری:</label>
+                                <input type="date" id="date_of_joining" name="date_of_joining" value="2004-10-14" min="2004-10-14" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="experience"><i class="m-2 fas fa-chart-line me-2"></i>کل تجربہ:</label>
+                                <div style="display: flex; align-items: center;">
+                                    <input type="text" id="experience" name="experience" required readonly
+                                           style="flex: 1; background-color: #f8f9fa;"
+                                           placeholder="خود بخود">
+                                    <span style="margin-left: 8px; color: #666; border: 5px;">سال</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="experience"><i class="fas fa-chart-line me-2"></i>نوکری کا کل تجربہ:</label>
-                            <input type="text" id="experience" name="experience" required placeholder="مثال: 5 سال">
+                            <label for="date"><i class="m-2 fas fa-calendar me-2"></i>آج کی تاریخ:</label>
+                            <input type="date" id="date" name="date" required readonly
+                                   style="background-color: #f8f9fa;">
                         </div>
 
-                        <div class="form-group">
-                            <label for="date"><i class="fas fa-calendar me-2"></i>تاریخ:</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
+
+{{--                        <div class="form-group">--}}
+{{--                            <label for="experience"><i class="m-2  fas fa-chart-line me-2"></i>نوکری کا کل تجربہ:</label>--}}
+{{--                            <input type="text" id="experience" name="experience" required placeholder="مثال: 5 سال">--}}
+{{--                        </div>--}}
+
+{{--                        <div class="form-group">--}}
+{{--                            <label for="date"><i class="m-2  fas fa-calendar me-2"></i>تاریخ:</label>--}}
+{{--                            <input type="date" id="date" name="date" required>--}}
+{{--                        </div>--}}
+
+
                     </div>
 
                     <div class="note">
-                        <strong><i class="fas fa-exclamation-circle me-2"></i>نوٹ:</strong>
+                        <strong><i class="m-2  fas fa-exclamation-circle me-2"></i>نوٹ:</strong>
                         اس فارم پر اپنا نام نہ لکھیں۔ تشخیص کے عمل کے متعلق آپ کا تجزیہ انتہائی قیمتی ہے۔
                         اگر آپ کو اضافی جگہ کی ضرورت ہے تو براۓ مہربانی صفحہ کے دوسری جانب لکھیں۔
                     </div>
 
                     <div class="nav-buttons">
                         <button id="start-btn">
-                            <i class="fas fa-play-circle me-2"></i>
+                            <i class="m-2  fas fa-play-circle me-2"></i>
                             تشخیص شروع کریں
                         </button>
                     </div>
@@ -506,19 +639,19 @@
 
                     <div class="nav-buttons">
                         <button id="prev-btn">
-                            <i class="fas fa-arrow-right me-2"></i>
+                            <i class="m-2  fas fa-arrow-right me-2"></i>
                             پچھلا سوال
                         </button>
                         <button id="next-btn">
                             اگلا سوال
-                            <i class="fas fa-arrow-left me-2"></i>
+                            <i class="m-2  fas fa-arrow-left me-2"></i>
                         </button>
                     </div>
                 </div>
 
                 <div id="open-ended-section" class="hidden">
                     <div class="section-title">
-                        <i class="fas fa-comments me-2"></i>
+                        <i class="m-2  fas fa-comments me-2"></i>
                         اضافی تجاویز اور تجربات
                     </div>
 
@@ -532,26 +665,26 @@
 
                     <div class="nav-buttons">
                         <button id="prev-open-btn">
-                            <i class="fas fa-arrow-right me-2"></i>
+                            <i class="m-2  fas fa-arrow-right me-2"></i>
                             پچھلا سوال
                         </button>
                         <button id="next-open-btn">
                             اگلا سوال
-                            <i class="fas fa-arrow-left me-2"></i>
+                            <i class="m-2  fas fa-arrow-left me-2"></i>
                         </button>
                     </div>
                 </div>
 
                 <div id="thank-you-section" class="thank-you hidden">
-                    <h2><i class="fas fa-check-circle me-2"></i>آپ کا شکریہ!</h2>
+                    <h2><i class="m-2  fas fa-check-circle me-2"></i>آپ کا شکریہ!</h2>
                     <p>آپ کی قیمتی رائے ہمارے لیے بہت اہم ہے اور ہماری بہتری کا باعث بنے گی۔</p>
                     <div class="mt-4">
                         <a href="{{ route('dashboard') }}" class="btn btn-primary me-2">
-                            <i class="fas fa-tachometer-alt me-2"></i>
+                            <i class="m-2  fas fa-tachometer-alt me-2"></i>
                             ڈیش بورڈ پر جائیں
                         </a>
                         <a href="{{ route('evaluation.form') }}" class="btn btn-success">
-                            <i class="fas fa-plus-circle me-2"></i>
+                            <i class="m-2  fas fa-plus-circle me-2"></i>
                             نیا تشخیص فارم
                         </a>
                     </div>
@@ -568,7 +701,7 @@
                     {
                         name: "تشخیص کی ساخت اور واضحیت",
                         questions: [
-                            "تشخیص کے مراحل اور مقاصد تمام شرکاء کو پہلے سے واضح طور پر بتائے جاتے ہیں۔",
+                            "تشخیص  (Evaluation) کے مراحل اور مقاصد تمام شرکاء کو پہلے سے واضح طور پر بتائے جاتے ہیں۔",
                             "کارکردگی کا جائزہ طے شدہ اہداف کے مطابق لیا جاتا ہے۔",
                             "تمام عملی مشقوں کو مکمل کرنے لئے دیا گیا وقت مناسب تھا۔",
                             "جائزہ لینے کے عمل کے بعد بریفینگ میں غلطیوں کی نشاندہی اصلاحی انداز میں کی گئی۔"
@@ -675,41 +808,71 @@
                 document.getElementById('date').valueAsDate = new Date();
 
                 // Functions
-                function startEvaluation() {
-                    const designation = document.getElementById('designation').value;
-                    const experience = document.getElementById('experience').value;
-                    const date = document.getElementById('date').value;
+                <!-- Add SweetAlert2 Library -->
 
-                    // For guest users, validate name and email
-                    const isGuest = {{ Auth::check() ? 'false' : 'true' }};
-                    if (isGuest) {
-                        const userName = document.getElementById('user_name').value;
-                        const userEmail = document.getElementById('user_email').value;
+                   function startEvaluation() {
+                const designation = document.getElementById('designation').value;
+                const district = document.getElementById('district').value;
+                const experience = document.getElementById('experience').value;
+                const date = document.getElementById('date').value;
 
-                        if (!userName || !userEmail) {
-                            alert('براہ کرم اپنا نام اور ای میل درج کریں');
-                            return;
-                        }
+                const isGuest = {{ Auth::check() ? 'false' : 'true' }};
+                if (isGuest) {
+                    const userName = document.getElementById('user_name').value;
+                    const userEmail = document.getElementById('user_email').value;
 
-                        // Validate email format
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailRegex.test(userEmail)) {
-                            alert('براہ کرم درست ای میل ایڈریس درج کریں');
-                            return;
-                        }
-                    }
-
-                    if (!designation || !experience || !date) {
-                        alert('براہ کرم تمام ذاتی معلومات درج کریں');
+                    if (!userName || !userEmail) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'نام اور ای میل درکار ہے',
+                            text: 'براہ کرم اپنا نام اور ای میل درج کریں',
+                            confirmButtonText: 'ٹھیک ہے'
+                        });
                         return;
                     }
 
-                    personalInfoSection.classList.add('hidden');
-                    evaluationSection.classList.remove('hidden');
-                    showQuestion();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(userEmail)) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'ای میل درست نہیں',
+                            text: 'براہ کرم درست ای میل ایڈریس درج کریں',
+                            confirmButtonText: 'درست کریں'
+                        });
+                        return;
+                    }
                 }
 
-                function showQuestion() {
+                if (!designation || !district || !experience || !date) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'نامکمل معلومات',
+                        text: 'براہ کرم تمام ذاتی معلومات درج کریں',
+                        confirmButtonText: 'ٹھیک ہے'
+                    });
+                    return;
+                }
+
+                // Continue if validation passes
+                personalInfoSection.classList.add('hidden');
+                evaluationSection.classList.remove('hidden');
+                showQuestion();
+
+                // Optional: success message when moving to evaluation
+                Swal.fire({
+                    icon: 'success',
+                    title: 'درست!',
+                    text: 'ذاتی معلومات مکمل ہو گئیں، اب جائزہ شروع کریں۔',
+                    confirmButtonText: 'شروع کریں'
+                });
+            }
+
+
+
+
+
+
+        function showQuestion() {
                     const question = allQuestions[currentQuestionIndex];
                     questionCategory.textContent = question.category;
                     questionText.textContent = question.text;
@@ -741,7 +904,14 @@
 
                 function nextQuestion() {
                     if (answers[currentQuestionIndex] === null) {
-                        alert('براہ کرم ایک درجہ منتخب کریں');
+
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'نامکمل معلومات',
+                            text: 'براہ کرم ایک درجہ منتخب کریں',
+                            confirmButtonText: 'ٹھیک ہے'
+                        });
+
                         return;
                     }
 
@@ -791,13 +961,18 @@
                     submitBtn.disabled = true;
 
                     try {
+
                         const formData = {
+
                             // User information (for guests)
-                            user_name: {{ Auth::check() ? 'null' : 'document.getElementById("user_name").value' }},
-                            user_email: {{ Auth::check() ? 'null' : 'document.getElementById("user_email").value' }},
+                            user_name: {!! Auth::check() ? 'null' : 'document.getElementById("user_name").value' !!},
+                            user_email: {!! Auth::check() ? 'null' : 'document.getElementById("user_email").value' !!},
 
                             // Professional information
                             designation: document.getElementById('designation').value,
+                            district: document.getElementById('district').value,
+
+                            date_of_joining: document.getElementById('date_of_joining').value,
                             experience: document.getElementById('experience').value,
                             evaluation_date: document.getElementById('date').value,
 
@@ -844,7 +1019,7 @@
                             const successMessage = document.createElement('div');
                             successMessage.className = 'alert alert-success mt-3';
                             successMessage.innerHTML = `
-                                <i class="fas fa-check-circle me-2"></i>
+                                <i class="m-2  fas fa-check-circle me-2"></i>
                                 تشخیص کامیابی سے جمع کرائی گئی!
                                 <strong>مجموعی اسکور: ${result.overall_score}/5.0</strong>
                             `;
@@ -853,13 +1028,41 @@
                             throw new Error(result.message || 'جمع کرانے میں خرابی');
                         }
                     } catch (error) {
+
                         console.error('Error:', error);
-                        alert('ڈیٹا جمع کرانے میں مسئلہ پیش آیا۔ براہ کرم دوبارہ کوشش کریں۔');
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'ڈیٹا درست نہیں',
+                            text: 'ڈیٹا جمع کرانے میں مسئلہ پیش آیا۔ براہ کرم دوبارہ کوشش کریں۔',
+                            confirmButtonText: 'درست کریں'
+                        });
+
+
+
                     } finally {
                         isSubmitting = false;
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
                     }
+                }
+            });
+
+            document.getElementById('date_of_joining').addEventListener('change', function() {
+                const joinDate = new Date(this.value);
+                const today = new Date();
+
+                if (!isNaN(joinDate)) {
+                    let years = today.getFullYear() - joinDate.getFullYear();
+                    const m = today.getMonth() - joinDate.getMonth();
+
+                    if (m < 0 || (m === 0 && today.getDate() < joinDate.getDate())) {
+                        years--;
+                    }
+
+                    document.getElementById('experience').value = years + " سال";
+                } else {
+                    document.getElementById('experience').value = "";
                 }
             });
         </script>

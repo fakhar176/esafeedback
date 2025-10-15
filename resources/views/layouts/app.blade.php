@@ -64,8 +64,10 @@
     </style>
 
     @stack('styles')
+
 </head>
 <body>
+
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
@@ -153,6 +155,9 @@
 
 <!-- Chart.js for Dashboard -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- sweetalert2 for Dashboard -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @stack('scripts')
 </body>
